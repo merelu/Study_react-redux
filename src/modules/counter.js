@@ -9,10 +9,11 @@ const DECREASE = "counter/DECREASE";
 //역션 생성함수
 //액션 생성함수를 만들고 export 키워드를 사용해서 내보낸다.
 
-export const setDiff = (diff) => ({ type: SET_DIFF, diff });
-export const increase = () => ({ type: INCREASE });
-export const decrease = () => ({ type: DECREASE });
+const setDiff = (diff) => ({ type: SET_DIFF, diff });
+const increase = () => ({ type: INCREASE });
+const decrease = () => ({ type: DECREASE });
 
+export const counterAction = { setDiff, increase, decrease };
 /*초기 상태 선언*/
 const initialState = {
   number: 0,

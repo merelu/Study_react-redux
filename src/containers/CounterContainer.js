@@ -1,7 +1,7 @@
 import React from "react";
 import Counter from "../components/Counter";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
-import { increase, decrease, setDiff } from "../modules/counter";
+import { counterAction } from "../modules/counter";
 
 function CounterContainer() {
   //useSelector는 리덕스 스토어의 상태를 조회하는 Hook이다.
@@ -27,9 +27,9 @@ function CounterContainer() {
   const dispatch = useDispatch();
   //각 액션들을 디스패치하는 함수들
   //onIncrease = dispatch() 이런식으로 하면 Too many re-render 발생
-  const onIncrease = () => dispatch(increase());
-  const onDecrease = () => dispatch(decrease());
-  const onSetDiff = (diff) => dispatch(setDiff(diff));
+  const onIncrease = () => dispatch(counterAction.increase());
+  const onDecrease = () => dispatch(counterAction.decrease());
+  const onSetDiff = (diff) => dispatch(counterAction.setDiff(diff));
 
   //상태와 액션을 디스패치 하는 함수들을 props로 넣어준다.
   return (
